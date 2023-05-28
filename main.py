@@ -1,11 +1,11 @@
-from turtle import Turtle, Screen
 import random
+from turtle import Turtle, Screen
 
 screen = Screen()
 screen.setup(width=500, height=400)
 colors = ["red", "green", "blue", "orange", "yellow", "purple"]
-user_bet = screen.textinput(title="Make your bet.", prompt=f"Which turtle will win the race? Enter a color: \n"
-                                                           f" {colors}")
+user_bet = screen.textinput(title="Welcome to Ninja Turtle Race!",
+                            prompt=f"Which turtle will win the race? Enter a color: \n{colors}")
 all_turtles = []
 is_race_on = False
 y = 90
@@ -23,7 +23,7 @@ if user_bet:
 
 while is_race_on:
     for turtle in all_turtles:
-        if turtle.xcor() > 230:
+        if turtle.xcor() > 220:
             is_race_on = False
             winning_color = turtle.pencolor()
             if winning_color == user_bet:
